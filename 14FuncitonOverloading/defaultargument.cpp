@@ -32,3 +32,13 @@ void iputs(char *str,int indent)
     cout<<" ";
   cout<<str<<endl;
 }
+//Once you begin to define parameters that take default values, you cannot specify
+//	     a nondefaulting parameter. That is, a declaration like this is also wrong and will
+//	     not compile:
+//	     int myfunc(float f, char *str, int i=10, int j);
+//Because i has been given a default value, j must be given one too.
+
+//All parameters that take default values must appear to the right of those that do
+//not. For example, it is incorrect to define iputs( ) like this:
+    // wrong!
+//  void iputs(int indent = -1, char *str);
