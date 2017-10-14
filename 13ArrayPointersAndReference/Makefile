@@ -1,17 +1,17 @@
 #the compiler:clang++ for C++ program 
-CC=clang++
+CXX=clang++
 #compiler flags:
 #-g adds debugging information to the executabble 
 #-Wall turns on most ,but not all, compiler warings
 #-pg enable gprof
 #-o0  no optimizing
-CFLAGS= -G -w -O0 -pg
+CXXFLAGS= -g -W -O0 -pg 
 
 SRCS=$(wildcard *.cpp )
-OBJS=$(PATSUBST %.cpp,%,$(SRCS))
+OBJS=$(patsubst %.cpp,%.exe,$(SRCS))
 .PHONY: all clean
 all:$(OBJS)
-%:%.cpp
-	$(CC) $(CFLAGS) $@ $<
+%.exe:%.cpp
+	$(CXX) $(CXXFLAGS)  $< -o $@
 clean:
 	rm -f $(OBJS)
