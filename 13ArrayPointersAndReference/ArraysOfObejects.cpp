@@ -18,3 +18,5 @@ int main()
 
   return 0;
 }
+//if a  class's constructor has a parameter ;
+//the array of the class's object must bi uninitialized
