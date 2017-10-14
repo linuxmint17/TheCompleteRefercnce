@@ -7,16 +7,17 @@
 #include<cstdlib>
 #include<iomanip>
 using namespace std;
-int main(void)
-{
   class cl{
     int i;
   public:
     cl(){i=0;}
     cl(int j){i=j;}
     int get_i(){return i;}
-    return 0;
+
   };
+
+int main(void)
+{
   cl ob[3]={1,2,3};
   cl *p;
   int i;
@@ -25,6 +26,6 @@ int main(void)
     {
     cout<<p->get_i()<<endl;
   p++;//point to next object
-   
-  return o;
+    }   
+  return 0;
 }
