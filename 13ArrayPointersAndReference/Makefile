@@ -12,6 +12,6 @@ OBJS=$(patsubst %.cpp,%.exe,$(SRCS))
 .PHONY: all clean
 all:$(OBJS)
 %.exe:%.cpp
-	$(CXX) $(CXXFLAGS)  $< -o $@
+	$(CXX) $(CXXFLAGS)  $< -o $@.exe
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) *~ *.exe
