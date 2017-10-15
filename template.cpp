@@ -1,11 +1,12 @@
 #include<iostream>
-#include<cstdio>
-#include<new>
+#include<iomanip>
 #include<string>
 #include<vector>
+#include<new>
+#include<cstdio>
 #include<cmath>
 #include<cstdlib>
-#include<iomanip>
+#include<cstring>
 using namespace std;
 int main(void)
 {
