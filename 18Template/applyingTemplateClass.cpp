@@ -10,7 +10,7 @@
 using namespace std;
 
 const int SIZE=10;
-template <typename AType>
+template <class AType>
 class atype{
   AType a[SIZE];
 public:
@@ -21,14 +21,14 @@ public:
   AType &operator[](int i);
 };
 //Provide range check for atype.
-template <typename AType >AType &atype<AType>::operator[](int i)
+template <typename  AType> AType &atype<AType>::operator[](int i)
 {
   if(i<0||i>SIZE-1){
     cout<<"\nIndex value of ";
     cout<<i<<" is out-of-bound"<<endl;
     exit(1);
-    return a[i];
   }
+    return a[i];
 }
   
 int main(void)

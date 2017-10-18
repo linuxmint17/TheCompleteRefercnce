@@ -7,10 +7,11 @@
 #include<cmath>
 #include<cstdlib>
 #include<cstring>
+//Non-type parameters are restricted to integers, pointers, or references
+//demonstrate non-type template arguments
 using namespace std;
 
-//demonstrate onn-type template arguments
-
+//here,int size is a non-type argument
 template <class AType ,int size > class atype{
   AType a[size];//length of array is passed in size
 public:
@@ -28,8 +29,8 @@ AType &atype<AType,size>::operator[](int i)
     cout<<"\nIndex value of";
     cout<<i<<"is out-of-bounds"<<endl;
     exit(1);
-    return a[i];
   }
+    return a[i];
 };
   
 int main(void)
