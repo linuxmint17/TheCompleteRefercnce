@@ -8,7 +8,7 @@
 #include<cstdlib>
 #include<cstring>
 using namespace std;
-//demonstrate a namespace
+//demonstrate using
 using namespace std;
 namespace CounterNameSpace{
   int upperbound;
@@ -33,7 +33,11 @@ namespace CounterNameSpace{
        
 int main(void)
 {
-  CounterNameSpace::upperbound=100;
+  //use only upperbound from CounterNameSpace
+    using CounterNameSpace::upperbound;
+  //now ,no qualification needed 
+  upperbound=100;
+  //qualification still needed fo lowerbound
   CounterNameSpace::lowerbound=0;
 
   CounterNameSpace::counter ob1(10);
@@ -41,16 +45,17 @@ int main(void)
   do{
     i=ob1.run();
     cout<<i<<" ";
-  }while(i>CounterNameSpace::lowerbound);
-
+    }while(i>CounterNameSpace::lowerbound);
     cout<<endl;
-  CounterNameSpace::counter ob2(20);
+    //now ,using entire COunterNameSpace
+    using namespace CounterNameSpace;
+    counter ob2(20);
     ob2.reset(100);
-    CounterNameSpace::lowerbound=90;
+    lowerbound=90;
     do{
       i=ob2.run();
       cout<<i<<" ";
-    }while(i>CounterNameSpace::lowerbound);
+      }while(i>lowerbound);
     
     cout<<endl;
   return 1;
